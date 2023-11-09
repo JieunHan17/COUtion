@@ -1,5 +1,4 @@
 import 'package:cou_tion/presentation/view/main_view.dart';
-import 'package:cou_tion/presentation/view/home_view.dart';
 import 'package:cou_tion/presentation/viewmodel/initial_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
