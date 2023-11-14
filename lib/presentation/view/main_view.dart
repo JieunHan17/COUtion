@@ -6,7 +6,6 @@ import 'package:cou_tion/presentation/view/search_view.dart';
 import 'package:cou_tion/presentation/viewmodel/main_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../viewmodel/main_viewmodel.dart';
 
 class MainPage extends GetView<MainViewModel> {
   const MainPage({super.key});
