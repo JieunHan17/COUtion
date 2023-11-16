@@ -1,7 +1,6 @@
 import 'package:cou_tion/domain/repository/SaleInfoRepository.dart';
 import 'package:get/get.dart';
 import '../../data/model/sale_info.dart';
-import '../../domain/repository/SaleInfoRepository.dart';
 
 class MarketViewModel extends GetxController {
   late final SaleInfoRepository _saleInfoRepository;

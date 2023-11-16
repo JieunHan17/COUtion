@@ -17,6 +17,7 @@ class MarketCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         width: MediaQuery.of(context).size.width * 0.9,
         height: 130,
         decoration: BoxDecoration(

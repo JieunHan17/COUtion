@@ -15,7 +15,8 @@ class DataSource {
 
   Future<List<SaleInfo>> getSaleInfoList() async {
     final response = await http.get(Uri.parse(
-        'https://cfc32160-d826-4a35-afea-09537ed383b7.mock.pstmn.io/api/sale/1'));
+        'https://cfc32160-d826-4a35-afea-09537ed383b7.mock.pstmn.io/api/sale'));
+    print('API response: ${response.body}');
     return jsonDecode(response.body)
         .map<SaleInfo>((json) => SaleInfo.fromJson(json))
         .toList();
