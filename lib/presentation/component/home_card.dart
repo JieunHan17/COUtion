@@ -10,6 +10,7 @@ class HomeCard extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.8,
       padding: EdgeInsets.only(bottom: 25.0),
+      margin: EdgeInsets.symmetric(vertical: 20.0),
       decoration: BoxDecoration(
           border: BorderDirectional(
               bottom: BorderSide(color: Colors.black38, width: 1.0))),
