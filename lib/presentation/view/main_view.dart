@@ -33,6 +33,11 @@ class MainPage extends GetView<MainViewModel> {
           break;
         case 3:
           return MarketPage();
+          // return Navigator(
+          //   onGenerateRoute: (rootSettings) {
+          //     return MaterialPageRoute(builder: (context) => const MarketPage());
+          //   },
+          // );
           break;
         case 4:
           return CameraPage();
