@@ -13,7 +13,7 @@ class MarketPage extends GetView<MarketViewModel> {
         home: SafeArea(
       child: Scaffold(
           appBar: PreferredSize(
-            child: CustomAppBar(isBack: false, title: 'market'),
+            child: CustomAppBar(isBack: false, title: 'CouTion Market'),
             preferredSize: Size.fromHeight(50),
           ),
           body: Obx(
