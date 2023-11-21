@@ -7,6 +7,8 @@ class MarketViewModel extends GetxController {
   RxList<SaleInfo> _saleInfoList = <SaleInfo>[].obs;
   List<SaleInfo> get saleInfo => _saleInfoList;
 
+  RxBool isFetching = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -15,6 +17,8 @@ class MarketViewModel extends GetxController {
   }
 
   Future _getSaleInfoList() async {
+    isFetching(true);
     _saleInfoList.value = await _saleInfoRepository.getSaleInfoList();
+    isFetching(false);
   }
 }

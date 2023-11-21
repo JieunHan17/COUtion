@@ -7,6 +7,8 @@ class HomeViewModel extends GetxController {
   RxList<UserInfo> _userInfoList = <UserInfo>[].obs;
   List<UserInfo> get userInfo => _userInfoList;
 
+  RxBool isFetching = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -19,6 +21,8 @@ class HomeViewModel extends GetxController {
   // }
 
   Future _getUserInfoList() async {
+    isFetching(true);
     _userInfoList.value = await _userInfoRepository.getUserInfoList();
+    isFetching(false);
   }
 }
