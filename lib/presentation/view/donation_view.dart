@@ -1,9 +1,11 @@
 import 'package:cou_tion/presentation/component/app_bar.dart';
 import 'package:cou_tion/presentation/component/donation_card.dart';
+import 'package:cou_tion/presentation/viewmodel/donation_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../helper/colors.dart';
 
-class DonationPage extends GetView<DonationPage> {
+class DonationPage extends GetView<DonationViewModel> {
   const DonationPage({super.key});
 
   @override
@@ -15,14 +17,21 @@ class DonationPage extends GetView<DonationPage> {
           child: CustomAppBar(isBack: false, title: 'Donation'),
           preferredSize: Size.fromHeight(50),
         ),
-        body: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return DonationCard(
-                name: "초록우산",
-                description: "초록우산 어린이재단은 75년 동안 빈곤과 질병으로 고통받는 아동을...",
-              );
-            }),
+        body: Obx(() {
+          if (controller.isFetching.isTrue) {
+            return const Center(
+              child: CircularProgressIndicator(color: mainColor),
+            );
+          } else {
+            return ListView.builder(
+                itemCount: controller.donationInfo.length,
+                itemBuilder: (context, index) {
+                  return DonationCard(
+                      name: controller.donationInfo[index].name,
+                      description: controller.donationInfo[index].description);
+                });
+          }
+        }),
       ),
     ));
   }
