@@ -1,5 +1,6 @@
 import 'package:cou_tion/presentation/component/home_card.dart';
 import 'package:cou_tion/presentation/view/market_view.dart';
+import 'package:cou_tion/presentation/viewmodel/main_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../viewmodel/home_viewmodel.dart';
@@ -7,6 +8,10 @@ import '../helper/colors.dart';
 
 class HomePage extends GetView<HomeViewModel> {
   const HomePage({super.key});
+
+  void onButtonPressed() {
+    Get.find<MainViewModel>().currentNavigationIndex(1);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,8 +99,7 @@ class HomePage extends GetView<HomeViewModel> {
                                   textStyle: const TextStyle(fontSize: 20),
                                 ),
                                 onPressed: () {
-                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => MarketPage()));
-                                  Get.toNamed('/market');
+                                  onButtonPressed();
                                 },
                                 child: const Text('쿠션 상점'),
                               ),

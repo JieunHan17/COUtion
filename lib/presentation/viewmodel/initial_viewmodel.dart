@@ -9,11 +9,20 @@ import 'package:get/get.dart';
 class InitialViewModel implements Bindings {
   @override
   void dependencies() {
+    Get.put(MainViewModel());
+    Get.put(HomeViewModel());
+    Get.put(MarketViewModel());
+    Get.put(SearchViewModel());
+    Get.put(DonationViewModel());
+    Get.put(MyPageViewModel());
+  }
+}
+
+/*
     Get.lazyPut<MainViewModel>(() => MainViewModel());
     Get.lazyPut<HomeViewModel>(() => HomeViewModel());
     Get.lazyPut<MarketViewModel>(() => MarketViewModel());
     Get.lazyPut<SearchViewModel>(() => SearchViewModel());
     Get.lazyPut<DonationViewModel>(() => DonationViewModel());
     Get.lazyPut<MyPageViewModel>(() => MyPageViewModel());
-  }
-}
+*/

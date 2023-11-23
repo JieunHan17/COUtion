@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: () => MainPage()),
-        GetPage(name: "/market", page: () => MarketPage())
+        GetPage(
+            name: "/market",
+            page: () => MarketPage(),
+            transition: Transition.noTransition)
       ],
     );
   }
