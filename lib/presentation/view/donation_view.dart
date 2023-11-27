@@ -14,7 +14,12 @@ class DonationPage extends GetView<DonationViewModel> {
         home: SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
-          child: CustomAppBar(isBack: false, title: 'Donation'),
+          child: CustomAppBar(
+            isBack: false,
+            title: 'Donation',
+            isAdd: false,
+            isSearch: true,
+          ),
           preferredSize: Size.fromHeight(50),
         ),
         body: Obx(() {
