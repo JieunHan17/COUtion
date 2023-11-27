@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class DonationCard extends StatelessWidget {
   final String name;
   final String description;
+  final String logo;
 
-  const DonationCard({Key? key, required this.name, required this.description})
+  const DonationCard({Key? key, required this.name, required this.description, required this.logo})
       : super(key: key);
 
   @override
@@ -27,10 +28,15 @@ class DonationCard extends StatelessWidget {
             padding: EdgeInsets.all(10.0),
             child: Row(
               children: [
-                Image(
-                  image: AssetImage('images/childfund_logo.jpg'),
+                Container(
                   height: 100,
+                  width: 100,
+                  child: Image(image: NetworkImage(logo),)
                 ),
+                // Image(
+                //   image: NetworkImage(logo),
+                //   height: 100,
+                // ),
                 SizedBox(
                   width: 10,
                 ),
@@ -47,9 +53,9 @@ class DonationCard extends StatelessWidget {
                         Icon(Icons.chevron_right)
                       ],
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 4),
                     Text(description,
-                        style: TextStyle(fontSize: 15, color: Colors.black38))
+                        style: TextStyle(fontSize: 15, color: Colors.black38), overflow: TextOverflow.ellipsis, maxLines: 2,)
                   ],
                 ))
               ],

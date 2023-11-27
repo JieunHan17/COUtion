@@ -28,7 +28,8 @@ class DonationPage extends GetView<DonationViewModel> {
                 itemBuilder: (context, index) {
                   return DonationCard(
                       name: controller.donationInfo[index].name,
-                      description: controller.donationInfo[index].description);
+                      description: controller.donationInfo[index].description,
+                      logo: controller.donationInfo[index].logo);
                 });
           }
         }),
