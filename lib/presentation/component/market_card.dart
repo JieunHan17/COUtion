@@ -5,13 +5,15 @@ class MarketCard extends StatelessWidget {
   final String sellerId;
   final int sellerDonationPercentage;
   final int numOfStamps;
+  final String imageUrl;
 
   const MarketCard(
       {Key? key,
       required this.cafeName,
       required this.sellerId,
       required this.sellerDonationPercentage,
-      required this.numOfStamps})
+      required this.numOfStamps,
+      required this.imageUrl})
       : super(key: key);
 
   @override
@@ -33,9 +35,10 @@ class MarketCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Row(children: [
-            Image(
-              image: AssetImage('images/cafe_sample.jpeg'),
+            Container(
               height: 100,
+              width: 100,
+              child: Image(image: NetworkImage(imageUrl), fit: BoxFit.cover)
             ),
             SizedBox(
               width: 10,

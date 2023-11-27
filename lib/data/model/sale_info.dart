@@ -9,12 +9,14 @@ class SaleInfo {
     String sellerId;
     int sellerDonationPercentage;
     int numOfStamps;
+    String imageUrl;
 
     SaleInfo({
         required this.cafeName,
         required this.sellerId,
         required this.sellerDonationPercentage,
         required this.numOfStamps,
+        required this.imageUrl
     });
 
     factory SaleInfo.fromJson(Map<String, dynamic> json) => SaleInfo(
@@ -22,6 +24,7 @@ class SaleInfo {
         sellerId: json["sellerId"],
         sellerDonationPercentage: json["sellerDonationPercentage"],
         numOfStamps: json["numOfStamps"],
+        imageUrl: json['imageUrl']
     );
 
     Map<String, dynamic> toJson() => {
@@ -29,5 +32,6 @@ class SaleInfo {
         "sellerId": sellerId,
         "sellerDonationPercentage": sellerDonationPercentage,
         "numOfStamps": numOfStamps,
+        "imageUrl": imageUrl
     };
 }

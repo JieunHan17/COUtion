@@ -31,7 +31,7 @@ class DonationCard extends StatelessWidget {
                 Container(
                   height: 100,
                   width: 100,
-                  child: Image(image: NetworkImage(logo),)
+                  child: Image(image: NetworkImage(logo), fit: BoxFit.contain)
                 ),
                 // Image(
                 //   image: NetworkImage(logo),

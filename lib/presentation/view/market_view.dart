@@ -31,7 +31,8 @@ class MarketPage extends GetView<MarketViewModel> {
                       sellerId: controller.saleInfo[index].sellerId,
                       sellerDonationPercentage:
                           controller.saleInfo[index].sellerDonationPercentage,
-                      numOfStamps: controller.saleInfo[index].numOfStamps);
+                      numOfStamps: controller.saleInfo[index].numOfStamps,
+                      imageUrl: controller.saleInfo[index].imageUrl,);
                 },
               );
             }
