@@ -1,18 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget {
   final bool isBack;
   final String title;
   final bool isAdd;
+  final Function()? addFunction;
   final bool isSearch;
+  final Function()? searchFunction;
 
   const CustomAppBar(
       {Key? key,
       required this.isBack,
       required this.title,
       required this.isAdd,
-      required this.isSearch})
+      required this.addFunction,
+      required this.isSearch,
+      required this.searchFunction})
       : super(key: key);
 
   @override
@@ -30,11 +35,15 @@ class CustomAppBar extends StatelessWidget {
                 maintainSize: true,
                 maintainAnimation: true,
                 maintainState: true,
-                child: InkWell(
-                    onTap: () {
-                      debugPrint('back key is pressed');
-                    },
-                    child: Icon(Icons.arrow_back)),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: InkWell(
+                      onTap: () {
+                        debugPrint('back key is pressed');
+                        Get.back();
+                      },
+                      child: Icon(Icons.arrow_back)),
+                ),
               ),
             ),
             Expanded(
@@ -52,11 +61,7 @@ class CustomAppBar extends StatelessWidget {
                 children: [
                   Visibility(
                     visible: isAdd,
-                    child: InkWell(
-                        onTap: () {
-                          debugPrint('add button is pressed');
-                        },
-                        child: Icon(Icons.add)),
+                    child: InkWell(onTap: addFunction, child: Icon(Icons.add)),
                   ),
                   Visibility(
                     visible: isSearch,
@@ -64,10 +69,7 @@ class CustomAppBar extends StatelessWidget {
                     maintainAnimation: true,
                     maintainState: true,
                     child: InkWell(
-                        onTap: () {
-                          debugPrint('search button is pressed');
-                        },
-                        child: Icon(Icons.search)),
+                        onTap: searchFunction, child: Icon(Icons.search)),
                   ),
                 ],
               ),

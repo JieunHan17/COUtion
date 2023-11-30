@@ -18,7 +18,13 @@ class DonationPage extends GetView<DonationViewModel> {
             isBack: false,
             title: 'Donation',
             isAdd: false,
+            addFunction: () {
+              
+            },
             isSearch: true,
+            searchFunction: () {
+              
+            },
           ),
           preferredSize: Size.fromHeight(50),
         ),

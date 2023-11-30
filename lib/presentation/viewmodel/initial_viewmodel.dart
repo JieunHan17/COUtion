@@ -1,6 +1,7 @@
 import 'package:cou_tion/presentation/viewmodel/donation_viewmodel.dart';
 import 'package:cou_tion/presentation/viewmodel/main_viewmodel.dart';
 import 'package:cou_tion/presentation/viewmodel/home_viewmodel.dart';
+import 'package:cou_tion/presentation/viewmodel/market_add_viewmodel.dart';
 import 'package:cou_tion/presentation/viewmodel/market_viewmodel.dart';
 import 'package:cou_tion/presentation/viewmodel/mypage_viewmodel.dart';
 import 'package:cou_tion/presentation/viewmodel/search_viewmodel.dart';
@@ -15,6 +16,7 @@ class InitialViewModel implements Bindings {
     Get.put(SearchViewModel());
     Get.put(DonationViewModel());
     Get.put(MyPageViewModel());
+    Get.lazyPut<MarketAddViewModel>(() => MarketAddViewModel());
   }
 }
 

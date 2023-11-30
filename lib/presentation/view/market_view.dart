@@ -1,5 +1,6 @@
 import 'package:cou_tion/presentation/component/app_bar.dart';
 import 'package:cou_tion/presentation/component/market_card.dart';
+import 'package:cou_tion/presentation/view/market_add_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../viewmodel/market_viewmodel.dart';
@@ -18,7 +19,12 @@ class MarketPage extends GetView<MarketViewModel> {
               isBack: false,
               title: 'CouTion Market',
               isAdd: true,
+              addFunction: () {
+                print('market add button is pressed');
+                Get.toNamed('/market/add');
+              },
               isSearch: true,
+              searchFunction: () {},
             ),
             preferredSize: Size.fromHeight(50),
           ),
