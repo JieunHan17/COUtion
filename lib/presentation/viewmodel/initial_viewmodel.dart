@@ -16,7 +16,7 @@ class InitialViewModel implements Bindings {
     Get.put(SearchViewModel());
     Get.put(DonationViewModel());
     Get.put(MyPageViewModel());
-    Get.lazyPut<MarketAddViewModel>(() => MarketAddViewModel());
+    Get.put(MarketAddViewModel());
   }
 }
 
